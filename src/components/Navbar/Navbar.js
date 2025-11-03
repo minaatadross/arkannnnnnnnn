@@ -48,8 +48,13 @@ function Navbar() {
           </Link>
         </div>
 
-        <div className="burger-icon" onClick={toggleMobileMenu}>
-          ☰
+        <div className="navbar-mobile-controls">
+          <div className="navbar-mobile-lang-switcher">
+            <LanguageSwitcher />
+          </div>
+          <div className="burger-icon" onClick={toggleMobileMenu}>
+            ☰
+          </div>
         </div>
 
         <div className="navbar-right">
@@ -84,8 +89,10 @@ function Navbar() {
                 {t('navbar.contact')}
               </Link>
             </li>
+            <li className="navbar-lang-switcher">
+              <LanguageSwitcher />
+            </li>
           </ul>
-          <LanguageSwitcher />
         </div>
       </nav>
       <div className="navbar-placeholder"></div>

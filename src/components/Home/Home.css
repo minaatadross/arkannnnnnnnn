@@ -149,12 +149,32 @@
 /* Add gap between Arabic title lines - especially between "إلى" and "رائد السوق" */
 [dir="rtl"] .hero__title-line:not(.hero__title-accent) {
   margin-bottom: 0.3em !important;
-  padding-left: 0.3em !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 [dir="rtl"] .hero__title-line.hero__title-accent {
   margin-top: 0.3em !important;
-  padding-right: 0.5em !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Arabic hero title font size adjustment */
+[dir="rtl"] .hero__title {
+  font-size: clamp(2.5rem, 8vw, 6rem) !important;
+  line-height: 1.1 !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+[dir="rtl"] .hero__title-line {
+  text-align: center !important;
+  width: 100%;
 }
 
 .hero__title-accent {

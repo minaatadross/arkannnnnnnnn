@@ -15,6 +15,7 @@
   border-bottom: 1px solid rgba(211, 170, 139, 0.1);
 }
 
+
 .navbar.scrolled {
   background-color: rgba(11, 11, 11, 0.9);
   box-shadow: var(--shadow-lg);
@@ -32,9 +33,11 @@
   margin-left: var(--space-lg);
 }
 
+
 .navbar-right {
   margin-right: var(--space-lg);
 }
+
 
 .navbar-logo {
   width: 200px;
@@ -55,8 +58,15 @@
   margin: 0;
 }
 
+
 .navbar-menu li {
   position: relative;
+}
+
+.navbar-lang-switcher {
+  margin-left: var(--space-md);
+  display: flex;
+  align-items: center;
 }
 
 .navbar-menu a {
@@ -112,6 +122,7 @@
   margin-left: var(--space-xs);
 }
 
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -125,6 +136,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   min-width: 200px;
 }
+
 
 .dropdown-menu li {
   padding: 0;
@@ -141,6 +153,15 @@
 .dropdown-menu a:hover {
   color: var(--accent);
   background: rgba(211, 170, 139, 0.1);
+}
+
+/* Mobile Controls (Language Switcher + Burger) */
+.navbar-mobile-controls {
+  display: none;
+}
+
+.navbar-mobile-lang-switcher {
+  display: none;
 }
 
 /* Burger Icon for Mobile */
@@ -200,7 +221,9 @@
     position: absolute;
     top: 80px; /* Adjust based on navbar height */
     left: 0;
-    padding-left: 80px;
+    right: 0;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
     background-color: transparent; /* Match navbar background */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -212,13 +235,6 @@
     background-color: rgba(0, 0, 0, 0.95); /* Match the main theme */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
-  .navbar-left img {
-    display: flex;
-    align-items: center;
-    margin-left: 2px; /* Add margin to the left of the logo */
-    width: 150px;
-  }
-
   .navbar-menu.active {
     display: flex; /* Show menu when active */
   }
@@ -226,30 +242,91 @@
   .navbar-menu li {
     margin: 10px 0; /* Add spacing between menu items */
     text-align: center; /* Center align menu items */
-  }
-
-  .navbar-right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     width: 100%;
-    padding-right: 30px;
-    margin-right: 20px;
   }
-
-  .burger-icon {
+  
+  .navbar-menu li a {
     display: block;
-    cursor: pointer;
-    font-size: 24px; /* Adjust icon size */
-    color: white;
-    margin-right: 20px;
+    width: 100%;
   }
 }
 @media (max-width: 768px) {
+  .navbar {
+    padding: var(--space-sm) 10px var(--space-sm) 10px;
+    position: relative;
+  }
+
+  /* Show mobile controls */
+  .navbar-mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
+  }
+
+  /* In RTL (Arabic), place controls on the left to avoid covering the logo */
+  [dir="rtl"] .navbar-mobile-controls {
+    right: auto;
+    left: 10px;
+  }
+
+  .navbar-mobile-lang-switcher {
+    display: block;
+  }
+
+  .navbar-mobile-lang-switcher .language-switcher {
+    margin: 0;
+    width: auto;
+    gap: 2px;
+    padding: 1px;
+  }
+
+  .navbar-mobile-lang-switcher .lang-btn {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  /* Hide language switcher from menu on mobile */
+  .navbar-lang-switcher {
+    display: none !important;
+  }
+
   /* Adjust logo */
+  .navbar-left {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    flex: 1;
+    max-width: calc(100% - 140px);
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  /* In RTL, reserve space on the left for controls by reducing max-width accordingly */
+  [dir="rtl"] .navbar-left {
+    max-width: calc(100% - 140px);
+  }
+
   .navbar-left img {
-    margin-left: -10px;
-    width: 300px;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+    max-width: 100%;
+    max-height: 50px;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .navbar-left a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   /* Hide only the menu list, not the entire navbar-right container */
@@ -257,7 +334,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 100%;
+    width: auto;
+    flex-shrink: 0;
   }
 
   /* Hide menu items inside navbar-right */
@@ -267,6 +345,7 @@
     position: absolute;
     top: 80px;
     left: 0;
+    right: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px);
@@ -275,28 +354,46 @@
     border-top: 1px solid rgba(211, 170, 139, 0.2);
   }
 
+
   .navbar-menu.active {
     display: flex;
   }
 
   /* Burger Icon styling */
   .burger-icon {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 35px;
+    display: flex;
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    font-size: 24px;
     color: white;
     cursor: pointer;
-    z-index: 1001; /* Must be above navbar-menu */
+    z-index: 1001;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0;
   }
+
 
   /* Menu Items */
   .navbar-menu li {
     margin: 15px 0;
     text-align: center;
-    margin-right: 70px;
+    margin-right: 0;
+    margin-left: 0;
   }
+
+  .navbar-lang-switcher {
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
 
   .navbar-menu a {
     color: white;
@@ -304,6 +401,10 @@
     font-size: 18px;
     font-weight: 500;
     transition: color 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
   }
 
   .navbar-menu a:hover {
@@ -319,6 +420,7 @@
     margin-top: -130px;
     left: 220px;
   }
+
 
   .dropdown-menu li {
     padding: 8px 0;
