@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { FaPlay } from "react-icons/fa";
 import "./Design3D.css";
-import reelArkanVideo from "../../assets/reelarkan22.mp4";
+import reelArkanVideo from "../../assets/reelarkan222.mp4";
 
 // Import images helper
 const importAll = (r) => {
