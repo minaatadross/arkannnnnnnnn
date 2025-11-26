@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--space-sm) var(--space-md);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(11, 11, 11, 0.95);
   color: var(--fg);
   position: fixed;
   top: 0;
@@ -11,15 +11,14 @@
   width: 100%;
   z-index: 1000;
   transition: all var(--duration-normal) var(--ease);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(211, 170, 139, 0.1);
+  height: 80px; /* Fixed height for easier calculations */
 }
 
-
 .navbar.scrolled {
-  background-color: rgba(11, 11, 11, 0.9);
+  background-color: rgba(11, 11, 11, 0.98);
   box-shadow: var(--shadow-lg);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-placeholder {
@@ -30,17 +29,11 @@
 .navbar-left {
   display: flex;
   align-items: center;
-  margin-left: var(--space-lg);
+  height: 100%;
 }
-
-
-.navbar-right {
-  margin-right: var(--space-lg);
-}
-
 
 .navbar-logo {
-  width: 200px;
+  width: 220px;
   height: auto;
   cursor: pointer;
   transition: transform var(--duration-normal) var(--ease);
@@ -50,34 +43,36 @@
   transform: scale(1.02);
 }
 
+/* Desktop Menu */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .navbar-menu {
   list-style: none;
   display: flex;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   padding: 0;
   margin: 0;
+  align-items: center;
 }
-
 
 .navbar-menu li {
   position: relative;
 }
 
-.navbar-lang-switcher {
-  margin-left: var(--space-md);
-  display: flex;
-  align-items: center;
-}
-
 .navbar-menu a {
   color: var(--fg);
   text-decoration: none;
-  font-size: var(--text-base);
+  font-size: var(--text-sm); /* Slightly smaller for better fit */
   font-weight: 500;
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-sm);
   transition: all var(--duration-normal) var(--ease);
   position: relative;
+  white-space: nowrap;
 }
 
 .navbar-menu a:hover {
@@ -101,328 +96,141 @@
   width: 100%;
 }
 
-.dropdown-trigger {
-  cursor: pointer;
-  font-size: var(--text-base);
-  font-weight: 500;
-  color: var(--fg);
-  transition: color var(--duration-normal) var(--ease);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-sm);
+/* Desktop Language Switcher */
+.navbar-lang-switcher {
+  margin-left: var(--space-md);
+  display: flex;
+  align-items: center;
 }
 
-.dropdown-trigger:hover {
-  color: var(--accent);
-  background: rgba(211, 170, 139, 0.1);
-}
-
-.dropdown-trigger .dropdown-arrow {
-  font-size: var(--text-sm);
-  transition: transform var(--duration-normal) var(--ease);
-  margin-left: var(--space-xs);
-}
-
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--surface);
-  box-shadow: var(--shadow-xl);
-  padding: var(--space-sm) 0;
-  border-radius: var(--radius-md);
-  list-style: none;
-  z-index: 10001;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  min-width: 200px;
-}
-
-
-.dropdown-menu li {
-  padding: 0;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: var(--space-sm) var(--space-md);
-  color: var(--fg);
-  text-decoration: none;
-  transition: all var(--duration-normal) var(--ease);
-}
-
-.dropdown-menu a:hover {
-  color: var(--accent);
-  background: rgba(211, 170, 139, 0.1);
-}
-
-/* Mobile Controls (Language Switcher + Burger) */
+/* Mobile Controls (Hidden on Desktop) */
 .navbar-mobile-controls {
   display: none;
 }
 
-.navbar-mobile-lang-switcher {
-  display: none;
-}
-
-/* Burger Icon for Mobile */
-.burger-icon {
-  display: none; /* Hidden by default */
-  cursor: pointer;
-  font-size: 24px;
-  color: white;
-  margin-right: 20px;
-  z-index: 1001;
-}
-
-/* Mobile Menu */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 250px;
-  background-color: #1a3530; /* Match navbar background */
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  text-align: center;
-}
-
-.mobile-menu li {
-  margin: 15px 0;
-}
-
-.mobile-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.mobile-menu a:hover {
-  color: #d3aa8b;
-}
-
-/* Responsive Design for Mobile Screens */
-@media (max-width: 768px) {
-  .navbar-menu {
-    position: absolute;
-    top: 80px; /* Adjust based on navbar height */
-    left: 0;
-    right: 0;
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-    background-color: transparent; /* Match navbar background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    margin-top: -20px;
-  }
-  /* Consistent black background when scrolling */
-  .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.95); /* Match the main theme */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  }
-  .navbar-menu.active {
-    display: flex; /* Show menu when active */
-  }
-
-  .navbar-menu li {
-    margin: 10px 0; /* Add spacing between menu items */
-    text-align: center; /* Center align menu items */
-    width: 100%;
-  }
-  
-  .navbar-menu li a {
-    display: block;
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
+/* Responsive Styles (Mobile/Tablet) */
+@media (max-width: 992px) {
   .navbar {
-    padding: var(--space-sm) 10px var(--space-sm) 10px;
-    position: relative;
+    justify-content: space-between;
+    padding: 0 var(--space-sm); /* Reduce padding on mobile */
   }
 
-  /* Show mobile controls */
+  /* Mobile Controls (Visible on Mobile) */
   .navbar-mobile-controls {
     display: flex;
     align-items: center;
-    gap: 12px;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    gap: var(--space-sm);
+  }
+
+  /* Hide desktop language switcher inside the menu to avoid duplication if desired,
+     but user wants it "visible at all times". We'll keep it in mobile controls 
+     and hide the one in the list. */
+  .navbar-lang-switcher {
+    display: none !important; 
+  }
+
+  /* Burger Icon */
+  .burger-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--fg);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 4px;
+    transition: color var(--duration-fast) var(--ease);
     z-index: 1002;
   }
 
-  /* In RTL (Arabic), place controls on the left to avoid covering the logo */
-  [dir="rtl"] .navbar-mobile-controls {
-    right: auto;
-    left: 10px;
+  .burger-icon:hover {
+    color: var(--accent);
   }
 
-  .navbar-mobile-lang-switcher {
-    display: block;
-  }
-
-  .navbar-mobile-lang-switcher .language-switcher {
-    margin: 0;
-    width: auto;
-    gap: 2px;
-    padding: 1px;
-  }
-
-  .navbar-mobile-lang-switcher .lang-btn {
-    padding: 4px 10px;
-    font-size: 11px;
-  }
-
-  /* Hide language switcher from menu on mobile */
-  .navbar-lang-switcher {
-    display: none !important;
-  }
-
-  /* Adjust logo */
-  .navbar-left {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-    flex: 1;
-    max-width: calc(100% - 140px);
-    overflow: hidden;
-    min-width: 0;
-  }
-
-  /* In RTL, reserve space on the left for controls by reducing max-width accordingly */
-  [dir="rtl"] .navbar-left {
-    max-width: calc(100% - 140px);
-  }
-
-  .navbar-left img {
-    margin-left: 0;
-    margin-right: 0;
-    width: auto;
-    max-width: 100%;
-    max-height: 50px;
-    height: auto;
-    object-fit: contain;
-  }
-  
-  .navbar-left a {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  /* Hide only the menu list, not the entire navbar-right container */
-  .navbar-right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: auto;
-    flex-shrink: 0;
-  }
-
-  /* Hide menu items inside navbar-right */
+  /* Mobile Menu Panel (Slide Down) */
   .navbar-menu {
-    display: none;
-    flex-direction: column;
     position: absolute;
-    top: 80px;
+    top: 80px; /* Directly below navbar */
     left: 0;
-    right: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(20px);
-    padding: 20px;
-    z-index: 1000;
-    border-top: 1px solid rgba(211, 170, 139, 0.2);
+    background-color: var(--bg);
+    flex-direction: column; /* Ensure vertical stacking */
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    
+    /* Animation Props */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    border-bottom: 1px solid rgba(211, 170, 139, 0.1);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   }
 
+  /* Force column direction for RTL on mobile to fix stacking issue */
+  [dir="rtl"] .navbar-menu {
+    flex-direction: column !important;
+  }
 
   .navbar-menu.active {
-    display: flex;
+    max-height: 400px; /* Adjust based on content */
+    opacity: 1;
+    padding: var(--space-md) 0;
   }
 
-  /* Burger Icon styling */
-  .burger-icon {
-    display: flex;
-    position: relative;
-    right: 0;
-    top: 0;
-    transform: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    z-index: 1001;
-    width: 30px;
-    height: 30px;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin: 0;
-  }
-
-
-  /* Menu Items */
   .navbar-menu li {
-    margin: 15px 0;
-    text-align: center;
-    margin-right: 0;
-    margin-left: 0;
-  }
-
-  .navbar-lang-switcher {
-    margin-left: 0;
-    margin-right: 0;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-
-  .navbar-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    display: block;
     width: 100%;
     text-align: center;
-    padding: 8px 0;
+    opacity: 0; /* Stagger effect setup */
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar-menu.active li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger delays for items */
+  .navbar-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+  .navbar-menu.active li:nth-child(2) { transition-delay: 0.15s; }
+  .navbar-menu.active li:nth-child(3) { transition-delay: 0.2s; }
+  .navbar-menu.active li:nth-child(4) { transition-delay: 0.25s; }
+  .navbar-menu.active li:nth-child(5) { transition-delay: 0.3s; }
+  .navbar-menu.active li:nth-child(6) { transition-delay: 0.35s; }
+
+  .navbar-menu a {
+    display: block;
+    width: 100%;
+    padding: var(--space-sm) 0;
+    font-size: var(--text-lg);
+    border-radius: 0;
   }
 
   .navbar-menu a:hover {
-    color: #d3aa8b;
+    background: rgba(211, 170, 139, 0.05);
+    color: var(--accent);
+  }
+  
+  .navbar-menu a::after {
+    display: none; /* Remove underline on mobile */
   }
 
-  /* Dropdown inside mobile */
-  .dropdown-menu {
-    position: absolute;
-    background-color: transparent;
-    box-shadow: none;
-    padding-right: 0;
-    margin-top: -130px;
-    left: 220px;
+  /* Adjust logo size for mobile to prevent overlap */
+  .navbar-logo {
+    width: 140px;
   }
+}
 
+/* RTL Adjustments */
+[dir="rtl"] .navbar-mobile-controls {
+  /* Ensure controls are on the correct side if needed */
+}
 
-  .dropdown-menu li {
-    padding: 8px 0;
-  }
+[dir="rtl"] .navbar-menu a {
+  text-align: center;
 }

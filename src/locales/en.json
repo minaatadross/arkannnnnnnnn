@@ -3,13 +3,15 @@
     "home": "Home",
     "about": "About",
     "production": "Production",
+    "exhibition": "Exhibition Work",
+    "design3d": "3D Design",
     "contact": "Contact"
   },
   "home": {
     "hero": {
       "badge": "Award-Winning Creative Solutions",
-      "titleLine1": "Transform Your Brand Into a",
-      "titleLine2": "Market Leader",
+      "titleLine1": "Transform Your Brand Into",
+      "titleLine2": "a Market Leader",
       "subtitle": "Premium design and flawless production",
       "description": "Join 500+ successful businesses who chose ARKAN AL-TAFAWUQ for exceptional creative solutions that drive real growth and measurable success.",
       "ctaPrimary": "Get Your Free Consultation",
@@ -299,12 +301,12 @@
     "services": {
       "title": "Our Services",
       "production": "Production Services",
-      "design": "Design Solutions",
+      "design": "3D Design",
       "consultation": "Consultation",
       "list": {
-        "design": "Design Solutions",
+        "design": "3D Design",
         "production": "Production Services",
-        "exhibition": "Exhibition Design",
+        "exhibition": "Exhibition Work",
         "consultation": "Consultation"
       }
     },
@@ -319,6 +321,82 @@
       "terms": "Terms of Service",
       "cookie": "Cookie Policy",
       "location": "Saudi Arabia"
+    }
+  },
+  "design3d": {
+    "hero": {
+      "badge": "3D Design Excellence",
+      "titleLine1": "Transform Your Vision Into",
+      "titleLine2": "Stunning 3D Reality",
+      "subtitle": "Experience cutting-edge 3D design solutions that bring your ideas to life with photorealistic quality and immersive detail."
+    },
+    "tabs": {
+      "photos": "Photos",
+      "videos": "Videos"
+    },
+    "gallery": {
+      "title": "3D Design Gallery"
+    },
+    "videos": {
+      "title": "3D Design Videos",
+      "watchReel": "Watch Reel",
+      "items": {
+        "signature": {
+          "tag": "Signature Reel",
+          "title": "ARKAN Immersive Reel",
+          "subtitle": "3D Exhibition Concept Showcase"
+        }
+      }
+    },
+    "empty": {
+      "photos": "No photos available yet. Check back soon!",
+      "videos": "No videos available yet. Check back soon!"
+    }
+  },
+  "exhibition": {
+    "hero": {
+      "badge": "Exhibition Work",
+      "titleLine1": "Immersive Exhibition",
+      "titleLine2": "Design & Production",
+      "subtitle": "We craft concept-to-installation exhibition experiences with precision fabrication, premium finishes, and flawless onsite delivery.",
+      "ctaPrimary": "Start a Project",
+      "ctaSecondary": "Explore Production"
+    },
+    "stats": {
+      "projects": "Projects Delivered",
+      "experience": "Years Experience",
+      "cities": "Cities Served"
+    },
+    "highlights": {
+      "badge": "What We Deliver",
+      "title": "End-to-End Exhibition Coverage",
+      "description": "From initial sketches and material selections to fabrication, logistics, and onsite assembly, we keep every detail aligned with your brand story.",
+      "cards": {
+        "concept": {
+          "title": "Concept & Strategy",
+          "description": "Translate brand goals into immersive experiences with detailed layouts, mood boards, and visitor journeys."
+        },
+        "build": {
+          "title": "Fabrication & Finishing",
+          "description": "In-house carpentry, metal, acrylic, and paint teams deliver premium booths, counters, and architectural features."
+        },
+        "logistics": {
+          "title": "Logistics & Installation",
+          "description": "Dedicated crews manage transport, build-up, dismantling, and onsite support across regional venues."
+        }
+      }
+    },
+    "gallery": {
+      "badge": "Featured Builds",
+      "title": "Recent Exhibition Projects",
+      "description": "A curated selection of exhibition booths, experiential displays, and modular structures crafted for regional brands.",
+      "empty": "New exhibition visuals are on the way."
+    },
+    "cta": {
+      "title": "Let’s build your next exhibition",
+      "description": "Send us your brief and we’ll craft a turnkey plan covering design, production, logistics, and onsite services.",
+      "primary": "Book a Consultation",
+      "secondary": "Call Our Team"
     }
   },
   "testimonials": {

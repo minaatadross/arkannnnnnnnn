@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./Navbar.css";
 import arkanlogo1 from "../../assets/arkanlogo1.webp"; // Logo Image
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
   const { t } = useTranslation();
@@ -18,11 +19,11 @@ function Navbar() {
     setMobileMenuOpen((prev) => !prev);
   };
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = useCallback((event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       closeDropdown();
     }
-  };
+  }, []);
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
@@ -52,9 +53,15 @@ function Navbar() {
           <div className="navbar-mobile-lang-switcher">
             <LanguageSwitcher />
           </div>
-          <div className="burger-icon" onClick={toggleMobileMenu}>
-            ☰
-          </div>
+          <button
+            type="button"
+            className={`burger-icon ${mobileMenuOpen ? "open" : ""}`}
+            onClick={toggleMobileMenu}
+            aria-label={mobileMenuOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
 
         <div className="navbar-right">
@@ -78,6 +85,22 @@ function Navbar() {
                 }}
               >
                 {t('navbar.production')}
+              </Link>
+            </li> 
+            <li>
+              <Link
+                to="/Design"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t('navbar.exhibition')}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/3DDesign"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t('navbar.design3d')}
               </Link>
             </li> 
             <li>

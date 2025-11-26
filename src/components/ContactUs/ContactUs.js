@@ -73,10 +73,9 @@ const ContactUs = () => {
     },
     {
       title: t('contact.info.phone.title'),
-      value: "+966 54 946 2381",
-      value2: "+966 54 947 2381",
+      value: "+966 54 947 2381",
       description: t('contact.info.phone.description'),
-      link: "tel:+966549462381",
+      link: "tel:+966549472381",
       action: "phone"
     },
     {

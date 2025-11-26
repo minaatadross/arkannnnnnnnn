@@ -8,6 +8,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "./utils/site"; // Initialize site utilities
 import "./i18n"; // Initialize i18n
 import App from "./App";
 

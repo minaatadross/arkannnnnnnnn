@@ -3,14 +3,14 @@ import { useTranslation } from "react-i18next";
 import "./Production.css";
 
 import productionmain from "../../assets/productionmain.webp";
-import eventImage1 from "../../assets/adminsss.jpg";
+import eventImage1 from "../../assets/eventImage1.webp";
 
 // Gallery images
 import arkan11 from "../../assets/arkan11.jpeg";
 import arkan22 from "../../assets/arkan22.jpeg";
-import arkan33 from "../../assets/arkan33.jpeg";
+import arkann1 from "../../assets/arkann1.jpeg";
 import arkan44 from "../../assets/arkan44.jpeg";
-import arkan55 from "../../assets/arkan55.jpeg";
+import arkann2 from "../../assets/arkann2.jpeg";
 import arkan66 from "../../assets/arkan66.jpeg";
 import arkan77 from "../../assets/arkan77.jpeg";
 import arkan88 from "../../assets/arkan88.jpeg";
@@ -64,7 +64,7 @@ const Production = () => {
       caption: t('production.gallery.items.2')
     },
     {
-      image: arkan33,
+      image: arkann1,
       alt: t('production.gallery.items.3'),
       caption: t('production.gallery.items.3')
     },
@@ -74,7 +74,7 @@ const Production = () => {
       caption: t('production.gallery.items.4')
     },
     {
-      image: arkan55,
+      image: arkann2,
       alt: t('production.gallery.items.5'),
       caption: t('production.gallery.items.5')
     },

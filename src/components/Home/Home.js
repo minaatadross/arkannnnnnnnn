@@ -4,6 +4,7 @@ import "./Home.css";
 import Newsletter from "../Newsletter/Newsletter";
 import Testimonials from "../Testimonials/Testimonials";
 import Gallery from "../Gallery/Gallery";
+import arkannImage from "../../assets/ARKANN.jpeg";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -19,7 +20,7 @@ const Home = () => {
   const exhibitionProjects = useMemo(() => [
     {
       id: 1,
-      src: "/images/exhibition-project-11.jpg",
+      src: arkannImage,
       alt: t('home.portfolio.items.1.alt'),
       title: t('home.portfolio.items.1.title'),
       caption: t('home.portfolio.items.1.caption'),
@@ -154,8 +155,9 @@ const Home = () => {
         <div className="hero__content container reveal">
           <div className="hero__badge">{t('home.hero.badge')}</div>
           <h1 className="hero__title">
-            <span className="hero__title-line">{t('home.hero.titleLine1')}</span>
-            <span className="hero__title-line hero__title-accent">{t('home.hero.titleLine2')}</span>
+            <span className="hero__title-line">
+              {t('home.hero.titleLine1')} <span className="hero__title-accent">{t('home.hero.titleLine2')}</span>
+            </span>
           </h1>
           <p className="hero__subtitle">
             {t('home.hero.subtitle')}
@@ -205,7 +207,7 @@ const Home = () => {
       {/* Services Overview Section */}
       <section className="services-overview section">
         <div className="container">
-          <div className="section__header reveal">
+          <div className="section__header reveal in">
             <span className="section__subtitle">{t('home.services.subtitle')}</span>
             <h2 className="section__title">{t('home.services.title')}</h2>
             <p className="section__description">

@@ -22,6 +22,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Commercial from "./components/Commercial/Commercial";
 import Residential from "./components/Residential/Residential";
 import Design from "./components/Design/Design";
+import Design3D from "./components/Design3D/Design3D";
 import Production from "./components/Production/Production";
 import Home from "./components/Home/Home";
 import BackToTop from "./components/BackToTop/BackToTop";
@@ -56,6 +57,7 @@ const App = () => {
           <Route exact path="/Commercial" component={Commercial} />
           <Route exact path="/Residential" component={Residential} />
           <Route exact path="/Design" component={Design} />
+          <Route exact path="/3DDesign" component={Design3D} />
           <Route exact path="/production" component={Production} />
           <Route exact path="/home" component={Home} />
           <Route

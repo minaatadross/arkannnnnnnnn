@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./Footer.css";
-import arkansmall from "../../assets/arkansmall.svg";
+import arkanlogo1 from "../../assets/arkanlogo1.webp";
 import { Link } from "react-router-dom";
 import {
   FaPhoneAlt,
@@ -23,8 +23,9 @@ const Footer = () => {
         {/* Company Information */}
         <div className="footer-section">
           <div className="footer-brand">
-            <img src={arkansmall} alt="ARKAN AL-TAFAWUQ Logo" className="footer-logo" />
-            <h3>ARKAN AL-TAFAWUQ</h3>
+            <div className="footer-brand-header">
+              <img src={arkanlogo1} alt="ARKAN AL-TAFAWUQ Logo" className="footer-logo" />
+            </div>
             <p className="footer-description">
               {t('footer.description')}
             </p>
@@ -58,56 +59,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Services */}
-        <div className="footer-section">
-          <h4>{t('footer.services.title')}</h4>
-          <ul className="footer-links">
-            <li>
-              <Link to="/production" className="footer-link">
-                {t('footer.services.production')}
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="footer-link">
-                {t('footer.services.design')}
-              </Link>
-            </li>
-            <li>
-              <Link to="/ContactUs" className="footer-link">
-                {t('footer.services.consultation')}
-              </Link>
-            </li>
-          </ul>
-        </div>
-
         {/* Contact Information */}
         <div className="footer-section">
-          <h4>{t('footer.contact.title')}</h4>
-          <div>
-            <div className="contact-item">
-              <FaPhoneAlt className="contact-icon" />
-              <div className="contact-details">
-                <a href="tel:+966549462381" className="contact-link">
-                  +966 54 946 2381
-                </a>
-                <a href="tel:+966549472381" className="contact-link">
-                  +966 54 947 2381
-                </a>
-              </div>
-            </div>
-            
-            <div className="contact-item">
-              <FaEnvelope className="contact-icon" />
-              <div className="contact-details">
-                <a href="mailto:info@arkanaltafawuq.com" className="contact-link">
-                  info@arkanaltafawuq.com
-                </a>
-              </div>
-            </div>
-            
+          <h3>{t('footer.contact.title')}</h3>
+          <div className="contact-info-container">
             <div className="contact-item">
               <FaMapMarkerAlt className="contact-icon" />
-              <div className="contact-details">
+              <div className="contact-details contact-details-single">
                 <a 
                   href="https://maps.app.goo.gl/zMjJ4NWnqta9pVMr7" 
                   target="_blank" 
@@ -116,15 +74,33 @@ const Footer = () => {
                 >
                   KSA - Riyadh Al Aylaiah District, Building 7573
                 </a>
-                <span className="contact-text">P.O. Box: 2160-12222</span>
               </div>
             </div>
             
             <div className="contact-item">
               <FaClock className="contact-icon" />
-              <div className="contact-details">
-                <span className="contact-text">{t('footer.contact.businessHours')}</span>
-                <span className="contact-text">{t('footer.contact.businessHoursTime')}</span>
+              <div className="contact-details contact-details-single">
+                <span className="contact-link contact-text-inline">
+                  {t('footer.contact.businessHours')}: {t('footer.contact.businessHoursTime')}
+                </span>
+              </div>
+            </div>
+            
+            <div className="contact-item">
+              <FaEnvelope className="contact-icon" />
+              <div className="contact-details contact-details-single">
+                <a href="mailto:info@arkanaltafawuq.com" className="contact-link">
+                  info@arkanaltafawuq.com
+                </a>
+              </div>
+            </div>
+            
+            <div className="contact-item">
+              <FaPhoneAlt className="contact-icon" />
+              <div className="contact-details contact-details-single">
+                <a href="tel:+966549472381" className="contact-link">
+                  +966 54 947 2381
+                </a>
               </div>
             </div>
           </div>
@@ -134,18 +110,15 @@ const Footer = () => {
         <div className="footer-section">
           <h4>{t('footer.services.title')}</h4>
           <div className="services-list">
-            <div className="service-item">
+            <Link to="/3DDesign" className="service-item">
               <span>{t('footer.services.list.design')}</span>
-            </div>
-            <div className="service-item">
+            </Link>
+            <Link to="/production" className="service-item">
               <span>{t('footer.services.list.production')}</span>
-            </div>
-            <div className="service-item">
+            </Link>
+            <Link to="/Design" className="service-item">
               <span>{t('footer.services.list.exhibition')}</span>
-            </div>
-            <div className="service-item">
-              <span>{t('footer.services.list.consultation')}</span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

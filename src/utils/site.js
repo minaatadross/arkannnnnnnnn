@@ -13,7 +13,7 @@ class SiteUtils {
 
   init() {
     this.createLoader();
-    this.createCursor();
+    // this.createCursor();
     this.setupScrollReveals();
     this.setupMagneticHovers();
     this.setupVideoBehavior();
