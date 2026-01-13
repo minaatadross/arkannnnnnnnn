@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.95050b91.css",
-    "main.js": "/static/js/main.9a82c43c.js",
-    "static/media/reelarkan22.mp4": "/static/media/reelarkan22.759cf49f9d160da27ba3.mp4",
+    "main.js": "/static/js/main.40e86302.js",
+    "static/media/reelarkan222.mp4": "/static/media/reelarkan222.e9f95c3fd58eebeecf93.mp4",
     "static/media/aboutmain.webp": "/static/media/aboutmain.b24b12ce6941b013deed.webp",
     "static/media/branding-bg.webp": "/static/media/branding-bg.2cfebbe6b64b810d9ba2.webp",
     "static/media/eventImage1.webp": "/static/media/eventImage1.619434de10bb4feddf44.webp",
@@ -195,10 +195,10 @@
     "index.html": "/index.html",
     "static/media/arkansmall.svg": "/static/media/arkansmall.c11ad46ce69a9e39e35cc5a209ab7d20.svg",
     "main.95050b91.css.map": "/static/css/main.95050b91.css.map",
-    "main.9a82c43c.js.map": "/static/js/main.9a82c43c.js.map"
+    "main.40e86302.js.map": "/static/js/main.40e86302.js.map"
   },
   "entrypoints": [
     "static/css/main.95050b91.css",
-    "static/js/main.9a82c43c.js"
+    "static/js/main.40e86302.js"
   ]
 }
