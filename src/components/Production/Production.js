@@ -28,6 +28,10 @@ import production6 from "../../assets/production6.webp";
 import production7 from "../../assets/production7.webp";
 import production8 from "../../assets/production8.webp";
 
+import productionNew1 from "../../assets/production1.jpeg";
+import productionNew2 from "../../assets/production2.jpeg";
+import productionNew3 from "../../assets/production3.jpeg";
+
 const Production = () => {
   const { t } = useTranslation();
 
@@ -54,7 +58,7 @@ const Production = () => {
   // Gallery items
   const galleryItems = useMemo(() => [
     {
-      image: arkan11,
+      image: productionNew3,
       alt: t('production.gallery.items.1'),
       caption: t('production.gallery.items.1')
     },
@@ -89,12 +93,12 @@ const Production = () => {
       caption: t('production.gallery.items.7')
     },
     {
-      image: arkan88,
+      image: productionNew1,
       alt: t('production.gallery.items.8'),
       caption: t('production.gallery.items.8')
     },
     {
-      image: arkan99,
+      image: productionNew2,
       alt: t('production.gallery.items.9'),
       caption: t('production.gallery.items.9')
     }

@@ -266,15 +266,18 @@
   justify-content: center;
   z-index: 2000;
   padding: 20px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .popup-content {
   position: relative;
-  background: #000;
+  background: transparent; /* Changed from #000 to transparent */
   border-radius: 20px;
-  overflow: hidden;
-  max-width: min(1000px, 90vw);
-  max-height: 90vh;
+  overflow: visible; /* Changed from hidden to visible so buttons can sit outside */
+  width: min(1000px, 90vw);
+  height: auto;
+  max-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,6 +288,7 @@
   height: 100%;
   object-fit: contain;
   background: #000;
+  max-height: 80vh;
 }
 
 .popup-close-button,
@@ -319,15 +323,17 @@
 }
 
 .popup-prev-button {
-  left: 16px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
+  margin-left: -60px; /* Move it outside the image on left */
 }
 
 .popup-next-button {
-  right: 16px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
+  margin-right: -60px; /* Move it outside the image on right */
 }
 
 @media (max-width: 768px) {
@@ -344,9 +350,9 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
-  .popup-prev-button,
+  /* .popup-prev-button,
   .popup-next-button {
-    display: none;
-  }
+     display: none;
+  } */
 }
 

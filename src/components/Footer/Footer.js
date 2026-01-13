@@ -11,6 +11,7 @@ import {
   FaGlobe,
   FaInstagram,
   FaFacebook,
+  FaLinkedin,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -54,6 +55,16 @@ const Footer = () => {
               >
                 <FaFacebook className="social-icon" />
                 <span>Facebook</span>
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/arkan-al-tafawuq/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin className="social-icon" />
+                <span>LinkedIn</span>
               </a>
             </div>
           </div>
