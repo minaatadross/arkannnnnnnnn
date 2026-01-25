@@ -105,6 +105,14 @@ function Navbar() {
             </li> 
             <li>
               <Link
+                to="/construction-interior"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t('navbar.construction')}
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/ContactUs"
                 className="contact"
                 onClick={() => setMobileMenuOpen(false)}

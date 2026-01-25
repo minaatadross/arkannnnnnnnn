@@ -14,84 +14,85 @@ import COMMERCIAL1 from "../../assets/COMMERCIAL1.jpg";
 import RESIDENTIAL1 from "../../assets/RESIDENTIAL1.jpeg";
 import DESIGN1 from "../../assets/DESIGN1.jpg";
 
+const categories = ["Residential", "Commercial", "Our Projects"];
+
+const allServices = [
+  {
+    title: "Living",
+    category: "Residential",
+    image: LIVING1,
+    link: "/living",
+  },
+  {
+    title: "Dinning",
+    category: "Residential",
+    image: DINNING1,
+    link: "/dinning",
+  },
+  {
+    title: "Bedroom",
+    category: "Residential",
+    image: BEDROOM1,
+    link: "/bedroom",
+  },
+
+  {
+    title: "Dressing",
+    category: "Residential",
+    image: DRESSING1,
+    link: "/dressing",
+  },
+  {
+    title: "Kitchen",
+    category: "Residential",
+    image: KITCHEN1,
+    link: "/kitchen",
+  },
+  {
+    title: "Bathroom",
+    category: "Residential",
+    image: BATHROOM1,
+    link: "/bathroom",
+  },
+  {
+    title: "Hospital & Clinic",
+    category: "Commercial",
+    image: CLINIC1,
+    link: "/hospital",
+  },
+  {
+    title: "Office",
+    category: "Commercial",
+    image: OFFICE1,
+    link: "/office",
+  },
+  {
+    title: "Restaurant",
+    category: "Commercial",
+    image: RESTURANT1,
+    link: "/resturant",
+  },
+  {
+    title: "Commercial",
+    category: "Our Projects",
+    image: COMMERCIAL1,
+    link: "/Commercial",
+  },
+  {
+    title: "Residential",
+    category: "Our Projects",
+    image: RESIDENTIAL1,
+    link: "/Residential",
+  },
+  {
+    title: "Design",
+    category: "Our Projects",
+    image: DESIGN1,
+    link: "/Design",
+  },
+];
+
 const Services = () => {
-  const categories = ["Residential", "Commercial", "Our Projects"];
-  const allServices = [
-    {
-      title: "Living",
-      category: "Residential",
-      image: LIVING1,
-      link: "/living",
-    },
-    {
-      title: "Dinning",
-      category: "Residential",
-      image: DINNING1,
-      link: "/dinning",
-    },
-    {
-      title: "Bedroom",
-      category: "Residential",
-      image: BEDROOM1,
-      link: "/bedroom",
-    },
-
-    {
-      title: "Dressing",
-      category: "Residential",
-      image: DRESSING1,
-      link: "/dressing",
-    },
-    {
-      title: "Kitchen",
-      category: "Residential",
-      image: KITCHEN1,
-      link: "/kitchen",
-    },
-    {
-      title: "Bathroom",
-      category: "Residential",
-      image: BATHROOM1,
-      link: "/bathroom",
-    },
-    {
-      title: "Hospital & Clinic",
-      category: "Commercial",
-      image: CLINIC1,
-      link: "/hospital",
-    },
-    {
-      title: "Office",
-      category: "Commercial",
-      image: OFFICE1,
-      link: "/office",
-    },
-    {
-      title: "Restaurant",
-      category: "Commercial",
-      image: RESTURANT1,
-      link: "/resturant",
-    },
-    {
-      title: "Commercial",
-      category: "Our Projects",
-      image: COMMERCIAL1,
-      link: "/Commercial",
-    },
-    {
-      title: "Residential",
-      category: "Our Projects",
-      image: RESIDENTIAL1,
-      link: "/Residential",
-    },
-    {
-      title: "Design",
-      category: "Our Projects",
-      image: DESIGN1,
-      link: "/Design",
-    },
-  ];
-
   const location = useLocation();
   const history = useHistory();
 

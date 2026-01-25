@@ -64,7 +64,7 @@ const Bathroom = () => {
             </button>
             <img
               src={projects[currentIndex].image}
-              alt={`Image ${currentIndex + 1}`}
+              alt={`Bathroom Project ${currentIndex + 1}`}
               className="popup-image"
             />
             <button className="popup-next-button" onClick={showNextImage}>

@@ -53,10 +53,15 @@
 .navbar-menu {
   list-style: none;
   display: flex;
+  flex-direction: row; /* Force row direction explicitly */
   gap: var(--space-md);
   padding: 0;
   margin: 0;
   align-items: center;
+}
+
+[dir="rtl"] .navbar-menu {
+  flex-direction: row; /* Ensure RTL also stays in a row on desktop */
 }
 
 .navbar-menu li {
@@ -155,7 +160,7 @@
     left: 0;
     width: 100%;
     background-color: var(--bg);
-    flex-direction: column; /* Ensure vertical stacking */
+    flex-direction: column !important; /* Ensure vertical stacking on mobile regardless of dir */
     align-items: center;
     gap: 0;
     padding: 0;
@@ -171,10 +176,10 @@
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   }
 
-  /* Force column direction for RTL on mobile to fix stacking issue */
-  [dir="rtl"] .navbar-menu {
+  /* Force column direction for RTL on mobile to fix stacking issue - ALREADY HANDLED ABOVE WITH !important */
+  /* [dir="rtl"] .navbar-menu {
     flex-direction: column !important;
-  }
+  } */
 
   .navbar-menu.active {
     max-height: 400px; /* Adjust based on content */

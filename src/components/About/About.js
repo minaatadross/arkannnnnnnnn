@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import "./About.css";
-import aboutMainImg from "../../assets/aboutmain.webp";
+// import aboutMainImg from "../../assets/aboutmain.webp";
 
 const About = () => {
   const { t } = useTranslation();

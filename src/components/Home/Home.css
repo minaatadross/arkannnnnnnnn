@@ -66,6 +66,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .home-page .hero {
+    background-attachment: scroll;
+  }
+}
+
 .home-page .hero::before {
   content: '';
   position: absolute;
@@ -1106,4 +1112,24 @@
   .hero__title-accent {
     animation: none;
   }
+}
+/* ===========================
+   FIX: Prevent "Our Expertise" from getting stuck hidden
+   =========================== */
+
+/* If you want OUR EXPERTISE always visible even if observer fails */
+.services-overview .section__header {
+  opacity: 1;
+  transform: none;
+}
+
+/* Optional: if you still want animation, apply reveal only when you explicitly add .reveal to it */
+.services-overview .section__header.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.services-overview .section__header.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
 }

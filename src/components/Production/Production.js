@@ -1,20 +1,16 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import "./Production.css";
 
-import productionmain from "../../assets/productionmain.webp";
 import eventImage1 from "../../assets/eventImage1.webp";
 
 // Gallery images
-import arkan11 from "../../assets/arkan11.jpeg";
 import arkan22 from "../../assets/arkan22.jpeg";
 import arkann1 from "../../assets/arkann1.jpeg";
 import arkan44 from "../../assets/arkan44.jpeg";
 import arkann2 from "../../assets/arkann2.jpeg";
 import arkan66 from "../../assets/arkan66.jpeg";
 import arkan77 from "../../assets/arkan77.jpeg";
-import arkan88 from "../../assets/arkan88.jpeg";
-import arkan99 from "../../assets/arkan99.jpeg";
 
 import brandingBg from "../../assets/branding-bg.webp";
 
@@ -108,16 +104,6 @@ const Production = () => {
     () => [production1, production2, production3, production4, production5, production6, production7, production8],
     []
   );
- 
-  const railRef = useRef(null);
-  const nudge = (dir = 1) => {
-    const el = railRef.current;
-    if (!el) return;
-    const one = el.querySelector(".production-work-card");
-    if (!one) return;
-    const step = one.getBoundingClientRect().width + 16;
-    el.scrollBy({ left: dir * step, behavior: "smooth" });
-  };
 
   return (
     <main className="production-page">
@@ -139,8 +125,8 @@ const Production = () => {
             </p>
           </div>
             <a
-              href="/files/productionportfolio.pdf"
-              download="ProductionPortfolio.pdf"
+              href="/files/CompanyProfile.pdf"
+              download="CompanyProfile.pdf"
             className="hero__cta"
             >
             {t('production.hero.cta')}
@@ -226,7 +212,7 @@ const Production = () => {
             </p>
     </div>
 
-          <div className="work-rail" ref={railRef}>
+          <div className="work-rail">
     {ourWork.map((src, i) => (
       <img
         key={i}

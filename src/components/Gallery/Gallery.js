@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import "./Gallery.css";
 
@@ -6,6 +6,14 @@ const Gallery = ({ images = [], title = "Our Work" }) => {
   const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const navigateImage = useCallback((direction) => {
+    const newIndex = currentIndex + direction;
+    if (newIndex >= 0 && newIndex < images.length) {
+      setCurrentIndex(newIndex);
+      setSelectedImage(images[newIndex]);
+    }
+  }, [currentIndex, images]);
 
   // Close lightbox with escape key
   useEffect(() => {
@@ -28,7 +36,7 @@ const Gallery = ({ images = [], title = "Our Work" }) => {
       document.removeEventListener('keydown', handleKeyPress);
       document.body.style.overflow = 'unset';
     };
-  }, [selectedImage, currentIndex]);
+  }, [selectedImage, navigateImage]);
 
   const openLightbox = (image, index) => {
     setSelectedImage(image);
@@ -37,14 +45,6 @@ const Gallery = ({ images = [], title = "Our Work" }) => {
 
   const closeLightbox = () => {
     setSelectedImage(null);
-  };
-
-  const navigateImage = (direction) => {
-    const newIndex = currentIndex + direction;
-    if (newIndex >= 0 && newIndex < images.length) {
-      setCurrentIndex(newIndex);
-      setSelectedImage(images[newIndex]);
-    }
   };
 
   if (!images || images.length === 0) {

@@ -44,7 +44,6 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <FaInstagram className="social-icon" />
-                <span>Instagram</span>
               </a>
               <a 
                 href="https://www.facebook.com/share/15Kg8ZPNLhH/?mibextid=wwXIfr" 
@@ -54,7 +53,6 @@ const Footer = () => {
                 aria-label="Facebook"
               >
                 <FaFacebook className="social-icon" />
-                <span>Facebook</span>
               </a>
               <a 
                 href="https://www.linkedin.com/company/arkan-al-tafawuq/" 
@@ -64,7 +62,6 @@ const Footer = () => {
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="social-icon" />
-                <span>LinkedIn</span>
               </a>
             </div>
           </div>
@@ -112,6 +109,10 @@ const Footer = () => {
                 <a href="tel:+966549472381" className="contact-link">
                   +966 54 947 2381
                 </a>
+                <span className="contact-separator"> / </span>
+                <a href="tel:+966549462381" className="contact-link">
+                  +966 54 946 2381
+                </a>
               </div>
             </div>
           </div>
@@ -130,6 +131,9 @@ const Footer = () => {
             <Link to="/Design" className="service-item">
               <span>{t('footer.services.list.exhibition')}</span>
             </Link>
+            <Link to="/construction-interior" className="service-item">
+              <span>{t('footer.services.list.construction')}</span>
+            </Link>
           </div>
         </div>
       </div>
@@ -146,9 +150,9 @@ const Footer = () => {
           
           <div className="footer-bottom-right">
             <div className="footer-bottom-links">
-              <a href="#" className="footer-bottom-link">{t('footer.bottom.privacy')}</a>
-              <a href="#" className="footer-bottom-link">{t('footer.bottom.terms')}</a>
-              <a href="#" className="footer-bottom-link">{t('footer.bottom.cookie')}</a>
+              <a href="/privacy" className="footer-bottom-link">{t('footer.bottom.privacy')}</a>
+              <a href="/terms" className="footer-bottom-link">{t('footer.bottom.terms')}</a>
+              <a href="/cookies" className="footer-bottom-link">{t('footer.bottom.cookie')}</a>
             </div>
             
             <div className="footer-location">

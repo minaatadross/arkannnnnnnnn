@@ -24,6 +24,7 @@ import Residential from "./components/Residential/Residential";
 import Design from "./components/Design/Design";
 import Design3D from "./components/Design3D/Design3D";
 import Production from "./components/Production/Production";
+import ConstructionInterior from "./components/ConstructionInterior/ConstructionInterior";
 import Home from "./components/Home/Home";
 import BackToTop from "./components/BackToTop/BackToTop";
 import Analytics from "./components/Analytics/Analytics";
@@ -59,6 +60,7 @@ const App = () => {
           <Route exact path="/Design" component={Design} />
           <Route exact path="/3DDesign" component={Design3D} />
           <Route exact path="/production" component={Production} />
+          <Route exact path="/construction-interior" component={ConstructionInterior} />
           <Route exact path="/home" component={Home} />
           <Route
             exact

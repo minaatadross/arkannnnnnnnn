@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
@@ -56,6 +56,26 @@ const Design = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Add scroll animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const stats = [
     { id: "projects", value: "500+", label: t("exhibition.stats.projects") },
     { id: "experience", value: "3+ yrs", label: t("exhibition.stats.experience") },
@@ -102,7 +122,7 @@ const Design = () => {
 
   return (
     <main className="exhibition-page">
-      <section className="exhibition-hero section">
+      <section className="exhibition-hero section reveal">
         <div className="container">
           <p className="section-badge">{t("exhibition.hero.badge")}</p>
           <h1 className="hero-title">
@@ -133,7 +153,7 @@ const Design = () => {
         </div>
       </section>
 
-      <section className="exhibition-highlights section">
+      <section className="exhibition-highlights section reveal">
         <div className="container">
           <div className="section-heading">
             <p className="section-badge">{t("exhibition.highlights.badge")}</p>
@@ -154,7 +174,7 @@ const Design = () => {
         </div>
       </section>
 
-      <section className="exhibition-gallery section">
+      <section className="exhibition-gallery section reveal">
         <div className="container">
           <div className="section-heading">
             <p className="section-badge">{t("exhibition.gallery.badge")}</p>
@@ -186,7 +206,7 @@ const Design = () => {
         </div>
       </section>
 
-      <section className="exhibition-cta section">
+      <section className="exhibition-cta section reveal">
         <div className="container">
           <h2>{t("exhibition.cta.title")}</h2>
           <p className="section-description">{t("exhibition.cta.description")}</p>

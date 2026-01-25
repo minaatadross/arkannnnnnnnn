@@ -5,6 +5,7 @@
     "production": "Production",
     "exhibition": "Exhibition Work",
     "design3d": "3D Design",
+    "construction": "Construction & Interior",
     "contact": "Contact"
   },
   "home": {
@@ -235,6 +236,52 @@
       "description": "Explore our recent projects and see the quality and craftsmanship that defines our production excellence."
     }
   },
+  "construction": {
+    "hero": {
+      "badge": "Construction & Interior Design",
+      "titleLine1": "Building Your Dreams",
+      "titleLine2": "With Precision",
+      "subtitle": "We deliver top-tier construction and interior design solutions, transforming spaces into functional works of art.",
+      "ctaPrimary": "Start Your Project",
+      "ctaSecondary": "About Us"
+    },
+    "stats": {
+      "projects": "Projects Completed",
+      "experience": "Years Excellence",
+      "team": "Expert Team Members"
+    },
+    "highlights": {
+      "badge": "Our Services",
+      "title": "Comprehensive Solutions",
+      "description": "From structural construction to the finest interior details, we handle every aspect of your project with expertise.",
+      "cards": {
+        "design": {
+          "title": "Interior Design",
+          "description": "Custom interior concepts that blend aesthetics with functionality for residential and commercial spaces."
+        },
+        "build": {
+          "title": "Construction",
+          "description": "High-quality construction services ensuring structural integrity, durability, and modern standards."
+        },
+        "renovation": {
+          "title": "Renovation",
+          "description": "Transforming existing spaces with modern upgrades and efficient layouts to meet your evolving needs."
+        }
+      }
+    },
+    "gallery": {
+      "badge": "Portfolio",
+      "title": "Recent Projects",
+      "description": "A glimpse into our diverse portfolio of construction and interior design projects.",
+      "empty": "Projects coming soon."
+    },
+    "cta": {
+      "title": "Ready to build your vision?",
+      "description": "Contact us today for a consultation on your construction or interior design project.",
+      "primary": "Get a Quote",
+      "secondary": "Call Us"
+    }
+  },
   "contact": {
     "hero": {
       "badge": "GET IN TOUCH",
@@ -307,6 +354,7 @@
         "design": "3D Design",
         "production": "Production Services",
         "exhibition": "Exhibition Work",
+        "construction": "Construction & Interior",
         "consultation": "Consultation"
       }
     },
