@@ -577,6 +577,15 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .production-page .hero {
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .hero__description {
+    margin-bottom: 30px;
+  }
+
   .content-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -591,9 +600,12 @@
     gap: 24px;
   }
   
-  .branding-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .branding-section {
+    padding: 30px 0;
+  }
+
+  .branding-header {
+    margin-bottom: 30px;
   }
   
   .materials-grid {
@@ -608,7 +620,11 @@
   }
   
   .production-page .hero__content {
-    padding: 150px 20px 60px;
+    padding: 150px 20px 30px;
+  }
+
+  .content-section {
+    padding: 30px 0;
   }
 
   .hero__badge {
