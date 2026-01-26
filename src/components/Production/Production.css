@@ -610,6 +610,10 @@
   .production-page .hero__content {
     padding: 150px 20px 60px;
   }
+
+  .hero__badge {
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 480px) {

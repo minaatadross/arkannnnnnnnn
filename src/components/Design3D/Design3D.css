@@ -416,6 +416,10 @@
     padding-top: 150px;
   }
 
+  .design3d-page .hero__badge {
+    margin-bottom: 30px;
+  }
+
   .projects-container {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 16px;

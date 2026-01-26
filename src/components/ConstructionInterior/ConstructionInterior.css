@@ -334,6 +334,10 @@
     padding-top: 150px;
   }
 
+  .construction-hero .section-badge {
+    margin-bottom: 30px;
+  }
+
   .hero-actions,
   .cta-actions {
     flex-direction: column;

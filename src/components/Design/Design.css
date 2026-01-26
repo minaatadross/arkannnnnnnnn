@@ -357,6 +357,10 @@
     padding-top: 150px;
   }
 
+  .exhibition-hero .section-badge {
+    margin-bottom: 30px;
+  }
+
   .hero-actions,
   .cta-actions {
     flex-direction: column;
