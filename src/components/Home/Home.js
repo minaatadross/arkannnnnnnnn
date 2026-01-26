@@ -6,6 +6,7 @@ import Gallery from "../Gallery/Gallery";
 import arkannImage from "../../assets/ARKANN.jpeg";
 import arkanPic10 from "../../assets/arkanpic10.jpeg";
 import arkanPic28 from "../../assets/arkanpic28.jpeg";
+import heroBg from "../../assets/background.jpeg";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -168,6 +169,11 @@ const Home = () => {
     <main className="home-page">
       {/* Hero Section */}
       <section className="hero section" aria-label="Home Hero">
+        <img
+          src={heroBg}
+          alt="Luxury Background"
+          className="hero__bg"
+        />
         <div className="hero__bg-overlay" />
         <div className="hero__content container reveal">
           <div className="hero__badge">{t("home.hero.badge")}</div>

@@ -58,17 +58,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: 
-    linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%),
-    radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, #000000 100%),
-    url('../../assets/background.jpeg') center/cover no-repeat fixed;
+  background: #000000;
   padding: 0;
   overflow: hidden;
 }
 
+.home-page .hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Remove problematic fixed background for mobile */
 @media (max-width: 768px) {
   .home-page .hero {
-    background-attachment: scroll;
+    background-attachment: unset;
   }
 }
 
@@ -103,6 +110,8 @@
   position: absolute;
   inset: 0;
   background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%),
+    radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, #000000 100%),
     radial-gradient(circle at 20% 80%, rgba(211, 170, 139, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(211, 170, 139, 0.03) 0%, transparent 50%);
   z-index: 1;
