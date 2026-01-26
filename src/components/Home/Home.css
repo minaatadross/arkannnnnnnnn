@@ -767,7 +767,7 @@
   }
   
   .home-page .hero__content {
-    padding: var(--space-lg);
+    padding: 150px 20px 60px;
   }
 }
 

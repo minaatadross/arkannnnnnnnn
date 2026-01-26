@@ -330,6 +330,10 @@
     padding: 60px 16px;
   }
 
+  .construction-hero.section {
+    padding-top: 150px;
+  }
+
   .hero-actions,
   .cta-actions {
     flex-direction: column;

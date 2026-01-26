@@ -267,6 +267,10 @@
   .service-card {
     padding: var(--space-md);
   }
+
+  .digital-marketing-page .hero__content {
+    padding-top: 150px;
+  }
   
   .process-list {
     gap: var(--space-md);

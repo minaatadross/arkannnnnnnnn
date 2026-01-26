@@ -108,7 +108,7 @@
 /* Mobile view adjustments for .services-page */
 @media (max-width: 768px) {
   .services-page {
-    margin-top: 50px;
+    margin-top: 150px;
     flex-direction: column;
     padding: 10px; /* Adjust padding for smaller screens */
   }
