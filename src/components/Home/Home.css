@@ -732,6 +732,7 @@
   
   .services-overview {
     text-align: center !important;
+    padding: 60px 0;
   }
   
   .services-overview .section__title,
@@ -744,6 +745,7 @@
   
   .about-preview {
     text-align: center !important;
+    padding: 60px 0;
   }
   
   .about-preview .section__title,
@@ -776,7 +778,7 @@
   }
   
   .home-page .hero__content {
-    padding: 150px 20px 60px;
+    padding: 150px 20px 30px;
   }
 }
 
