@@ -503,6 +503,14 @@
     overflow-wrap: break-word;
     hyphens: auto;
   }
+
+  .values.values--beige .section__description {
+    margin: 0 auto 30px;
+  }
+
+  .values-header {
+    margin-bottom: 30px;
+  }
   
   .mission-vision {
     padding: 60px 0 30px;
