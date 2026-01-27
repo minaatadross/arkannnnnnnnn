@@ -607,6 +607,18 @@
   .branding-header {
     margin-bottom: 30px;
   }
+
+  /* Center OUTDOOR & INDOOR BRANDING content on mobile */
+  .branding-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .branding-card {
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+  }
   
   .materials-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
