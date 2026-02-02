@@ -10,6 +10,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import "./ConstructionInterior.css";
+import constructionHeroBg from "../../assets/arkan101.jpeg";
 
 // Import interior assets
 import int1 from "../../assets/int1.jpg";
@@ -145,7 +146,10 @@ const ConstructionInterior = () => {
 
   return (
     <main className="construction-page">
-      <section className="construction-hero section reveal">
+      <section
+        className="construction-hero section reveal"
+        style={{ backgroundImage: `url(${constructionHeroBg})` }}
+      >
         <div className="container">
           <p className="section-badge">{t("construction.hero.badge")}</p>
           <h1 className="hero-title">

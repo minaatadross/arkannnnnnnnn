@@ -13,6 +13,9 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 
@@ -22,8 +25,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(211, 170, 139, 0.1) 0%, transparent 70%);
+  background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.6) 0%,
+      rgba(5, 5, 5, 0.85) 100%
+    ),
+    radial-gradient(circle at 50% 50%, rgba(211, 170, 139, 0.1) 0%, transparent 70%);
   z-index: 0;
+  pointer-events: none;
 }
 
 .design3d-page .hero__content {

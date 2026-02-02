@@ -3,6 +3,12 @@ import { useTranslation } from "react-i18next";
 import { FaPlay } from "react-icons/fa";
 import "./Design3D.css";
 import reelArkanVideo from "../../assets/reelarkan222.mp4";
+import arkanpic3d1 from "../../assets/arkanpic3d1.jpeg";
+import arkanpic3d2 from "../../assets/arkanpic3d2.jpeg";
+import arkanpic3d3 from "../../assets/arkanpic3d3.jpeg";
+import arkanpic3d4 from "../../assets/arkanpic3d4.jpeg";
+import arkanpic3d5 from "../../assets/arkanpic3d5.jpeg";
+import arkanpic3d6 from "../../assets/arkanpic3d6.jpeg";
 
 // Import images helper
 const importAll = (r) => {
@@ -36,10 +42,39 @@ const galleryOrder = [
   "3ddesign6.jpeg",
 ];
 const orderedProjects = galleryOrder.map((name) => images[name]).filter(Boolean);
+const extra3DImages = [
+  arkanpic3d1,
+  arkanpic3d2,
+  arkanpic3d3,
+  arkanpic3d4,
+  arkanpic3d5,
+  arkanpic3d6,
+];
 
 const Design3D = () => {
   const { t } = useTranslation();
-  const projects = orderedProjects.length ? orderedProjects : Object.values(images);
+  const baseProjects = orderedProjects.length ? orderedProjects : Object.values(images);
+  const allProjects = [...baseProjects, ...extra3DImages];
+
+  // Group white-background renders together in the layout
+  const isWhiteBackgroundImage = (img) => {
+    if (typeof img !== "string") return false;
+    return (
+      img.includes("3ddesign7") ||
+      img.includes("3ddesign8") ||
+      img.includes("3ddesign9") ||
+      img.includes("arkanpic3d1") ||
+      img.includes("arkanpic3d2") ||
+      img.includes("arkanpic3d3") ||
+      img.includes("arkanpic3d4") ||
+      img.includes("arkanpic3d5") ||
+      img.includes("arkanpic3d6")
+    );
+  };
+
+  const whiteBgProjects = allProjects.filter(isWhiteBackgroundImage);
+  const otherProjects = allProjects.filter((img) => !isWhiteBackgroundImage(img));
+  const projects = [...otherProjects, ...whiteBgProjects];
 
   // Video files with metadata
   const videos = useMemo(
@@ -110,7 +145,11 @@ const Design3D = () => {
   return (
     <main className="design3d-page">
       {/* Hero Section */}
-      <section className="hero section" aria-label="3D Design Hero">
+      <section
+        className="hero section"
+        aria-label="3D Design Hero"
+        style={{ backgroundImage: `url(${arkanpic3d1})` }}
+      >
         <div className="hero__bg-overlay" />
         <div className="hero__content container reveal">
           <div className="hero__badge">{t('design3d.hero.badge')}</div>

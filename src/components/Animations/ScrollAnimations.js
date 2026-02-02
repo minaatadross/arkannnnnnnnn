@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Animations.css';
 
 const ScrollAnimations = () => {
+  const location = useLocation();
+
   useEffect(() => {
-    // Enhanced scroll animation observer
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px 0px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -17,17 +19,29 @@ const ScrollAnimations = () => {
       });
     }, observerOptions);
 
-    // Observe all elements with animation classes
-    const animateElements = document.querySelectorAll('.animate-on-scroll');
-    animateElements.forEach((el) => observer.observe(el));
+    const startObserving = () => {
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      animateElements.forEach((el) => observer.observe(el));
+    };
 
-    // Cleanup
+    // Run after paint so route content (e.g. Home service cards) is in the DOM
+    const rafId = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        startObserving();
+      });
+    });
+
+    // Re-observe when route changes so new .animate-on-scroll elements are picked up
+    const timeoutId = setTimeout(startObserving, 300);
+
     return () => {
+      cancelAnimationFrame(rafId);
+      clearTimeout(timeoutId);
       observer.disconnect();
     };
-  }, []);
+  }, [location.pathname]);
 
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default ScrollAnimations;

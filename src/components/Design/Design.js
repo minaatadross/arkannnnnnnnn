@@ -10,6 +10,11 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import "./Design.css";
+import exhibitionHeroBg from "../../assets/arkanbg1.jpeg";
+import arkannnpic1 from "../../assets/arkannnpic1.jpeg";
+import arkannnpic2 from "../../assets/arkannnpic2.jpeg";
+import arkannnpic3 from "../../assets/arkannnpic3.jpeg";
+import arkannnpic4 from "../../assets/arkannnpic4.jpeg";
 
 const importAll = (r) => {
   const images = {};
@@ -40,6 +45,8 @@ try {
   }
 }
 
+const extraExhibitionImages = [arkannnpic1, arkannnpic2, arkannnpic3, arkannnpic4];
+
 const Design = () => {
   const { t } = useTranslation();
   const projects = React.useMemo(() => {
@@ -48,9 +55,10 @@ const Design = () => {
       return match ? parseInt(match[1], 10) : 0;
     };
 
-    return Object.keys(images)
+    const fromContext = Object.keys(images)
       .sort((a, b) => getImageNumber(a) - getImageNumber(b))
       .map((key) => images[key]);
+    return [...fromContext, ...extraExhibitionImages];
   }, []);
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -122,7 +130,10 @@ const Design = () => {
 
   return (
     <main className="exhibition-page">
-      <section className="exhibition-hero section reveal">
+      <section
+        className="exhibition-hero section reveal"
+        style={{ backgroundImage: `url(${exhibitionHeroBg})` }}
+      >
         <div className="container">
           <p className="section-badge">{t("exhibition.hero.badge")}</p>
           <h1 className="hero-title">

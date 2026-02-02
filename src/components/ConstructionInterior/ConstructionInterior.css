@@ -91,15 +91,28 @@
 .construction-hero {
   text-align: center;
   background: linear-gradient(135deg, #0c0c0c, #050505);
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+}
+
+.construction-hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .construction-hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(211, 170, 139, 0.15), transparent 55%);
+  background: linear-gradient(
+      to bottom,
+      rgba(12, 12, 12, 0.7) 0%,
+      rgba(5, 5, 5, 0.85) 100%
+    ),
+    radial-gradient(circle at top right, rgba(211, 170, 139, 0.15), transparent 55%);
   pointer-events: none;
 }
 
@@ -332,6 +345,11 @@
 
   .construction-hero.section {
     padding-top: 150px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-size: cover !important;
+    background-position: center 20% !important;
+    background-repeat: no-repeat !important;
   }
 
   .construction-hero .section-badge {
