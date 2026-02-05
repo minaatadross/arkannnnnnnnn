@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import "./ContactUs.css";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
 
 const ContactUs = () => {
   const { t } = useTranslation();
@@ -39,28 +39,34 @@ const ContactUs = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // prevents page refresh
+    if (isSubmitting) return;
     setIsSubmitting(true);
 
-    emailjs
-      .send(
-        "service_jwticqi", // 🔁 Replace this
-        "template_e4aqb8l", // 🔁 Replace this
-        formData,
-        "OC-kGvkcCmtGc2lrh" // 🔁 Replace this
-      )
-      .then(() => {
-        alert(t('contact.form.success'));
-        setFormData({ from_email: "", subject: "", message: "" });
-      })
-      .catch((error) => {
-        console.error("❌ EmailJS Error:", error);
-        alert(t('contact.form.error'));
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+    try {
+      const endpoint =
+        process.env.REACT_APP_CONTACT_API ||
+        "https://arkanaltafawuq.com/ContactUs.php";
+
+      const response = await axios.post(endpoint, formData);
+      if (response.data.success) {
+        alert("Contact Us added successfully!");
+        setFormData({
+          from_email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        console.error("ContactUs API returned failure:", response.data);
+        alert("Error adding Contact Us");
+      }
+    } catch (error) {
+      console.error("Error adding Contact Us:", error);
+      alert("Error adding Contact Us");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -158,7 +164,7 @@ const ContactUs = () => {
               </p>
             </div>
 
-        <form onSubmit={handleSubmit} className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="from_email">{t('contact.form.fields.email')}</label>
           <input
@@ -198,10 +204,10 @@ const ContactUs = () => {
           ></textarea>
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="submit-button"
-                disabled={isSubmitting}
+                 disabled={isSubmitting}
               >
                 {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
           </button>
