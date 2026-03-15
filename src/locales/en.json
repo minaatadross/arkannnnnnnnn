@@ -6,6 +6,8 @@
     "exhibition": "Exhibition Work",
     "design3d": "3D Design",
     "construction": "Construction & Interior",
+    "commercial": "Commercial",
+    "ourServices": "Fit-Out & Finishing",
     "contact": "Contact"
   },
   "home": {
@@ -354,7 +356,7 @@
         "design": "3D Design",
         "production": "Production Services",
         "exhibition": "Exhibition Work",
-        "construction": "Construction & Interior",
+        "construction": "Fit Out & Finishing",
         "consultation": "Consultation"
       }
     },
@@ -511,4 +513,3 @@
     }
   }
 }
-
