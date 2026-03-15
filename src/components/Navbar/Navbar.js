@@ -105,10 +105,10 @@ function Navbar() {
             </li> 
             <li>
               <Link
-                to="/construction-interior"
+                to="/our-services"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {t('navbar.construction')}
+                {t('navbar.ourServices')}
               </Link>
             </li>
             <li>

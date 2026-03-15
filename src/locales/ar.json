@@ -6,6 +6,8 @@
     "exhibition": "أعمال المعارض",
     "design3d": "التصميم ثلاثي الأبعاد",
     "construction": "البناء والتصميم الداخلي",
+    "commercial": "تجاري",
+    "ourServices": "التشطيبات والتجهيز",
     "contact": "اتصل بنا"
   },
   "home": {
@@ -354,7 +356,7 @@
         "design": "التصميم ثلاثي الأبعاد",
         "production": "خدمات الإنتاج",
         "exhibition": "أعمال المعارض",
-        "construction": "البناء والتصميم الداخلي",
+        "construction": "التشطيبات والتجهيز",
         "consultation": "الاستشارة"
       }
     },

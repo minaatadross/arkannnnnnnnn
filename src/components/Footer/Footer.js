@@ -105,11 +105,10 @@ const Footer = () => {
             
             <div className="contact-item">
               <FaPhoneAlt className="contact-icon" />
-              <div className="contact-details contact-details-single">
+              <div className="contact-details contact-details-phone">
                 <a href="tel:+966549472381" className="contact-link">
                   +966 54 947 2381
                 </a>
-                <span className="contact-separator"> / </span>
                 <a href="tel:+966549462381" className="contact-link">
                   +966 54 946 2381
                 </a>
@@ -131,7 +130,7 @@ const Footer = () => {
             <Link to="/Design" className="service-item">
               <span>{t('footer.services.list.exhibition')}</span>
             </Link>
-            <Link to="/construction-interior" className="service-item">
+            <Link to="/our-services" className="service-item">
               <span>{t('footer.services.list.construction')}</span>
             </Link>
           </div>
